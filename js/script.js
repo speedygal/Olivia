@@ -6,7 +6,7 @@ window.onload = function() {
     if (pinValidated === "true") {
       var currentTime = new Date().getTime();
       // Check if more than one minute has passed
-      if (currentTime - pinTime <= 600000) {
+      if (currentTime - pinTime <= 600000 * 10) {  // 10 minutes
         document.getElementById("pin-access").style.display = "none";
         var mainContent = document.getElementById("main-content");
         mainContent.style.display = "block"; // Show the main content
@@ -49,5 +49,6 @@ window.onload = function() {
         pinInput.classList.remove("error"); // Remove the 'error' class after the shaking animation
       }, 1000); // 1000 ms = 0.5s (duration of the shaking animation) * 2 (number of shakes)
     }
+    pinInput.blur(); // Add this line to remove the focus from the input field
   }
   
