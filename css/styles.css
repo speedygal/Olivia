@@ -87,6 +87,7 @@ body {
 .pin-button {
   font-family: 'Dancing Script';
   background-color: #fff;
+  color: #333;
   margin-top: 30px;
   padding: 10px;
   font-size: 22px;
@@ -245,5 +246,20 @@ body {
 
   input[type="checkbox"]:checked ~ .nav-links {
     transform: translateX(0);
+}
+
+.center-content {
+  font-size: 18px;
+  padding: 10px; /* add padding to prevent the content from touching the screen edges */
+}
+
+.pin-access-form {
+  width: 80%; /* reduce the width of the form */
+  margin: 0 auto; /* center the form */
+}
+
+.pin-input, .pin-button {
+  font-size: 1em; /* reduce the font size */
+  width: 100%; /* make the input field and button take up the full width of the form */
 }
 }
