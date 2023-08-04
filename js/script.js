@@ -6,7 +6,7 @@ window.onload = function() {
     if (pinValidated === "true") {
       var currentTime = new Date().getTime();
       // Check if more than one minute has passed
-      if (currentTime - pinTime <= 60000) {
+      if (currentTime - pinTime <= 600000) {
         document.getElementById("pin-access").style.display = "none";
         var mainContent = document.getElementById("main-content");
         mainContent.style.display = "block"; // Show the main content

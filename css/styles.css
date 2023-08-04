@@ -148,9 +148,7 @@ body {
 
 .navbar a:hover {
   color: #666;
-  border-bottom-color: #333; /* Change the border color on hover */
 }
-
 
 .image-container { /* New class */
   display: flex;
@@ -162,3 +160,90 @@ body {
   width: 90%;
 }
 
+.navbar input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-lines .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.6s ease;
+}
+
+/* Transform the hamburger icon into an 'X' when the checkbox is checked */
+.navbar input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg) translateY(14px);
+}
+
+.navbar input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  opacity: 0;
+}
+
+.navbar input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg) translateY(-14px);
+}
+
+@media (min-width: 768px) {
+  .hamburger-lines {
+    display: none;
+  }
+  .nav-links {
+    transform: none;
+    position: static; /* Override the fixed position on larger screens */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger-lines {
+    display: flex; /* Show the hamburger icon on mobile */
+    z-index: 2;
+  }
+
+  .navbar h1 {
+    padding-top: 33px;
+    font-size: 24px;
+  }
+
+  .navbar p {
+    font-size: 11px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack the menu items vertically on mobile */
+    position: fixed; /* Make the menu items cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9; /* Change the background color as needed */
+    padding-top: 30px; /* Add some padding at the top for the hamburger icon */
+    align-items: center; /* Center the menu items */
+    transform: translateX(-100%); 
+    transition: transform .5s ease-in
+  }
+
+  .nav-links a {
+    font-size: 18px; /* Increase the font size on mobile */
+    margin-bottom: 5px; /* Add some vertical spacing between the menu items */
+    color: #333;
+  }
+
+  input[type="checkbox"]:checked ~ .nav-links {
+    transform: translateX(0);
+}
+}
