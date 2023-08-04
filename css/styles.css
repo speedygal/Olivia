@@ -22,17 +22,22 @@
   100% { transform: translateX(0px); }
 }
 
-
 .pin-input.error {
   animation: shake 0.5s; /* Apply the shaking animation */
   animation-iteration-count: 1; /* Shake once */
 }
 
-
 body {
   font-family: 'Georgia', serif;
   background-color: #f9f9f9;
   margin: 0; 
+  min-height: 100vh;
+  color: #333;
+}
+
+section {
+  padding: 0 40px;
+  padding-bottom: 50px;
 }
 
 #main-content {
@@ -95,6 +100,7 @@ body {
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 150px
 }
 
 .pin-button:hover {
@@ -116,7 +122,7 @@ body {
   font-size: 40px;
   color: #333;
   font-family: 'Chopin Script';
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -132,7 +138,7 @@ body {
 .nav-links { /*Navigation Pages */
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 50px;
 }
 
 .navbar a.active {
@@ -141,7 +147,7 @@ body {
 }
 
 .navbar a {
-  color: #888;
+  color: #777;
   text-decoration: none;
   font-size: 16px;
   border-bottom: 2px solid transparent; /* Add a transparent border */
@@ -159,6 +165,72 @@ body {
 
 .image {
   width: 90%;
+  padding-bottom: 50px;
+}
+
+.photoPage {
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  align-items: center;
+  padding-top: 170px;
+  justify-content: center;
+}
+
+.image-banner {
+  margin-top: 30px;
+  background: url('../images/ring.jpg') no-repeat center center;
+  background-size: 500px auto; /* Set the width and height of the background image */
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-text {
+  margin: 0;
+  font-size: 48px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.banner-subtext {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.details-item {
+  display: flex; /* Set display to flex */
+  flex-direction: column; /* Stack the content vertically */
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  padding: 20px;
+  text-align: center; /* Center the text */
+}
+
+
+.details-item h3 {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: normal;
+}
+
+.details-item p {
+  font-size: 1em;
+  margin-top: 10px;
 }
 
 .navbar input[type="checkbox"] {
@@ -198,18 +270,62 @@ body {
   transform: rotate(-45deg) translateY(-14px);
 }
 
-@media (min-width: 768px) {
-  .hamburger-lines {
-    display: none;
-  }
-  .nav-links {
-    transform: none;
-    position: static; /* Override the fixed position on larger screens */
-  }
+.map {
+  width: 100%; 
+  position: relative;
+  margin-top: 30px;
+}
+
+.map iframe {
+  width: 70%;
+  height: 400px;
+  border: 0;
+}
+
+.location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 60px;
+}
+
+.image-containers {
+  display: flex;
+  justify-content: center;
+  max-width: 800px; /* Adjust this value as needed */
+  width: 100%; /* Ensures the container takes up the full width if possible */
+  margin: 0 auto;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px; /* Adjust as needed */
+  max-width: 800px; /* Adjust this value as needed */
+  width: 100%; /* Ensures the grid takes up the full width if possible */
+  margin: 0 auto; /* Centers the grid */
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.hamburger-lines {
+  display: none;
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .hamburger-lines {
     display: flex; /* Show the hamburger icon on mobile */
     z-index: 2;
@@ -232,7 +348,6 @@ body {
     width: 100%;
     height: 100vh;
     background-color: #f9f9f9; /* Change the background color as needed */
-    padding-top: 30px; /* Add some padding at the top for the hamburger icon */
     align-items: center; /* Center the menu items */
     transform: translateX(-100%); 
     transition: transform .5s ease-in
@@ -258,8 +373,42 @@ body {
   margin: 0 auto; /* center the form */
 }
 
-.pin-input, .pin-button {
+.pin-input {
   font-size: 1em; /* reduce the font size */
   width: 100%; /* make the input field and button take up the full width of the form */
 }
+
+.pin-button {
+  font-size: 1em;
 }
+
+.details-grid {
+  grid-template-columns: 1fr;
+}
+
+.map {
+  margin: 5% 0 0 0;
+  z-index: -1;
+}
+
+.map iframe {
+  width: 100%;
+}
+
+.details-item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.image-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+section {
+  padding: 0 30px;
+  padding-bottom: 50px;
+}
+}
+
+
