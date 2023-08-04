@@ -357,7 +357,8 @@ h1, h2, h3 {
     background-color: #f9f9f9; /* Change the background color as needed */
     align-items: center; /* Center the menu items */
     transform: translateX(-100%); 
-    transition: transform .5s ease-in
+    transition: transform .5s ease-in;
+    z-index: 1;
   }
 
   .nav-links a {
@@ -395,7 +396,7 @@ h1, h2, h3 {
 
 .map {
   margin: 5% 0 0 0;
-  z-index: -1;
+
 }
 
 .map iframe {
