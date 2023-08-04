@@ -29,6 +29,7 @@
 
 body {
   font-family: 'Georgia', serif;
+  font-weight: normal;
   background-color: #f9f9f9;
   margin: 0; 
   min-height: 100vh;
@@ -221,15 +222,25 @@ section {
   text-align: center; /* Center the text */
 }
 
+h3 {
+  margin-top: 60px;
+}
+
+.photoPage h1 {
+  font-size: 46px;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script';
+}
 
 .details-item h3 {
-  font-size: 1.5em;
+  font-size: 26px;
   margin: 0;
   font-weight: normal;
 }
 
 .details-item p {
-  font-size: 1em;
   margin-top: 10px;
 }
 
@@ -287,15 +298,11 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .center-text {
   text-align: center;
-}
-
-h3 {
-  margin-top: 60px;
 }
 
 .image-containers {
@@ -409,6 +416,32 @@ section {
   padding: 0 30px;
   padding-bottom: 50px;
 }
+
+.banner-text, .photoPage h1 {
+  font-size: 38px;
 }
 
+.image-banner {
+  margin-top: 0;
+}
 
+h2, h3 {
+  font-size: 24px;
+}
+
+}
+
+@media (max-width: 300px) {
+  .banner-text {
+    font-size: 24px;
+    
+  }
+
+  .banner-subtext {
+    font-size: 14px;
+  }
+
+  .image-banner {
+    margin-top: 0;
+  }
+}
