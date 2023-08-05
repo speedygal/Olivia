@@ -9,24 +9,78 @@
 }
 
 @keyframes shake {
-  0% { transform: translateX(0px); }
-  10% { transform: translateX(-5px); }
-  20% { transform: translateX(5px); }
-  30% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  50% { transform: translateX(-5px); }
-  60% { transform: translateX(5px); }
-  70% { transform: translateX(-5px); }
-  80% { transform: translateX(5px); }
-  90% { transform: translateX(-5px); }
-  100% { transform: translateX(0px); }
+  0%, 100% { transform: translateX(0px); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
+/* Pin Page */
 .pin-input.error {
-  animation: shake 0.5s; /* Apply the shaking animation */
-  animation-iteration-count: 1; /* Shake once */
+  animation: shake 0.5s; 
+  animation-iteration-count: 1; 
 }
 
+.pin-access-form { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pin-input, .pin-button { 
+  color: #333;
+  border-radius: 25px;
+  font-size: 22px;
+  border: 2px solid #888;
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.pin-input {
+  width: 200px;
+  outline: none; 
+}
+
+.pin-input:focus { 
+  border-color: #666;
+}
+
+.pin-button {
+  font-family: 'Dancing Script';
+  margin-top: 30px;  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 140px
+}
+
+.pin-button:hover {
+  color: white;
+  background-color: #999;
+}
+
+#main-content {
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 1s ease-out, visibility 1s ease-out; 
+}
+
+#main-content.visible {
+  opacity: 1;
+  visibility: visible; 
+}
+
+.center-content { /* PIN */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+/* END Pin Page 
+*/
+
+/* General */
 body {
   font-family: 'Georgia', serif;
   font-weight: normal;
@@ -37,103 +91,45 @@ body {
 }
 
 section {
-  padding: 0 40px;
-  padding-bottom: 50px;
-}
-
-#main-content {
-  opacity: 0; /* Start hidden */
-  visibility: hidden; /* Start hidden */
-  transition: opacity 1s ease-out, visibility 1s ease-out; /* Transition effect */
-}
-
-#main-content.visible {
-  opacity: 1; /* End visible */
-  visibility: visible; /* End visible */
-}
-
-.center-content { /* PIN */
-  font-family: 'Dancing Script';
-  font-size: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  padding: 0 20px; /*side padding */
+  margin: 40px 0;
   text-align: center;
 }
 
-.pin-access-form { /* New class */
-  display: flex;
-  flex-direction: column; /* Makes its contents stack vertically */
-  align-items: center;
-}
-
-.pin-input {
-  padding: 10px;
-  margin: 5px;
-  width: 200px;
-  border: 2px solid #888; /* Change the border color and width */
-  border-radius: 25px; /* Add border radius to make the input field rounder */
-  color: #333; /* Change the text color */
-  outline: none; /* Remove the default browser outline */
-}
-
-.pin-input:focus { /* Add styling for when the input field is focused */
-  border-color: #666;
-}
-
-.pin-input, .pin-button { /* New classes for the input field and button */
-  padding: 10px;
-  font-size: 1.2em;
-  margin: 5px;
-  width: 200px; /* Set a width for the input field and button */
-}
-
-.pin-button {
+h1, h2, h3 {
   font-family: 'Dancing Script';
-  background-color: #fff;
-  color: #333;
-  margin-top: 30px;
-  padding: 10px;
-  font-size: 22px;
-  border: 2px solid #888;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 150px
 }
 
-.pin-button:hover {
-  color: white;
-  background-color: #999;
+h3 {
+  margin-top: 60px;
+}
+/* END General
+*/
+
+/* Navigation */
+.header {
+  margin-bottom: 50px; 
 }
 
 .navbar {
   text-align: center;
   padding: 20px;
   letter-spacing: 1px;
-}
-
-.header {
-  margin-bottom: 50px; /* Added to create some vertical space below the header */
-}
-
-.navbar h1 { /*Olivia Kumail*/
-  font-size: 40px;
   color: #333;
+}
+
+.navbar h1 { /*Olivia & Kumail*/
+  font-size: 40px;
   font-family: 'Chopin Script';
   letter-spacing: 1px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
 }
 
 .navbar p { /*Date */
   font-size: 16px;
-  color: #333;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: 1px;
+  margin: 0;
 }
 
 .nav-links { /*Navigation Pages */
@@ -142,114 +138,31 @@ section {
   gap: 50px;
 }
 
+.navbar a {
+  color: #777;
+  text-decoration: none;
+  font-size: 16px;
+}
+
 .navbar a.active {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
-.navbar a {
-  color: #777;
-  text-decoration: none;
-  font-size: 16px;
-  border-bottom: 2px solid transparent; /* Add a transparent border */
-}
-
 .navbar a:hover {
-  color: #666;
+  color: #555;
 }
 
-.image-container { /* New class */
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+/* END Navigation 
+*/
 
-.image {
-  width: 90%;
-  padding-bottom: 50px;
-}
-
-.photoPage {
-  display: flex;
-  flex-direction: column; /* Stack the content vertically */
-  align-items: center;
-  padding-top: 170px;
-  justify-content: center;
-}
-
-.image-banner {
-  margin-top: 30px;
-  background: url('../images/ring.jpg') no-repeat center center;
-  background-size: 500px auto; /* Set the width and height of the background image */
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.banner-text {
-  margin: 0;
-  font-size: 48px;
-  font-weight: normal;
-  letter-spacing: 3px;
-}
-
-.banner-subtext {
-  margin-top: 0;
-  margin-bottom: 25px;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-.details-item {
-  display: flex; /* Set display to flex */
-  flex-direction: column; /* Stack the content vertically */
-  align-items: center; /* Center the content horizontally */
-  justify-content: center; /* Center the content vertically */
-  padding: 20px;
-  text-align: center; /* Center the text */
-}
-
-h3 {
-  margin-top: 60px;
-}
-
-.photoPage h1 {
-  font-size: 46px;
-}
-
-h1, h2, h3 {
-  font-family: 'Dancing Script';
-}
-
-.details-item h3 {
-  font-size: 26px;
-  margin: 0;
-  font-weight: normal;
-}
-
-.details-item p {
-  margin-top: 10px;
-}
-
+/* Hamburger Menu */
 .navbar input[type="checkbox"] {
-  display: none; /* Hide the checkbox */
+  display: none; 
 }
 
 .hamburger-lines {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
@@ -268,7 +181,6 @@ h1, h2, h3 {
   transition: all 0.6s ease;
 }
 
-/* Transform the hamburger icon into an 'X' when the checkbox is checked */
 .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
   transform: rotate(45deg) translateY(14px);
 }
@@ -281,6 +193,133 @@ h1, h2, h3 {
   transform: rotate(-45deg) translateY(-14px);
 }
 
+/* END Hamburger Menu 
+*/
+
+/* Home Page */
+.image {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+/* END Home Page
+*/
+
+/* Event Details */
+.image-banner {
+  background: url('../images/ring.jpg') no-repeat center center;
+  background-size: 550px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+}
+
+.image-banner h2 {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 3px;
+}
+
+.image-banner p {
+  margin-top: 0;
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+
+.details-item h3 {
+  font-size: 26px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.details-item p {
+  margin-top: 10px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.details-item {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  padding: 20px;
+  text-align: center; 
+  position: relative;
+}
+
+.details-item:nth-child(-n+2) {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Vertical Lines
+ .details-item:nth-child(2n-1)::after {
+  content: "";
+  position: absolute;
+  height: calc(100% - 40px); /* Adjust according to padding-bottom and margin-bottom 
+  width: 1px;
+  background: #ddd; /* line color 
+  right: -10px; /* adjust according to grid-gap/2 
+  top: 20px; /* adjust according to padding-top 
+}
+*/
+
+/* END Event Details 
+*/ 
+
+/* Dress Code */
+.dressCode {
+  text-align: center;
+}
+
+.image-containers {
+  display: flex;
+  justify-content: center;
+  max-width: 800px; 
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container-first {
+  margin-bottom: 100px;
+}
+
+.image-container-second {
+  margin-bottom: 0;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+}
+
+/* END Dress Code 
+*/
+
+/* Location */
 .map {
   width: 100%; 
   position: relative;
@@ -298,43 +337,197 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px;
 }
 
-.center-text {
-  text-align: center;
+/* END Location 
+*/
+.rsvp-banner {
+  font-family: 'Dancing Script';
 }
 
-.image-containers {
+.rsvp-banner p {
+  font-family: 'Georgia', serif;
+}
+
+.rsvp-form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  max-width: 800px; /* Adjust this value as needed */
-  width: 100%; /* Ensures the container takes up the full width if possible */
-  margin: 0 auto;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  max-width: 600px; /* This is the maximum width of the form. Adjust it as needed. */
+  margin: 0 auto; /* This will center the form */
+  margin-top: 50px;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px; /* Adjust as needed */
-  max-width: 800px; /* Adjust this value as needed */
-  width: 100%; /* Ensures the grid takes up the full width if possible */
-  margin: 0 auto; /* Centers the grid */
-}
 
-.image-grid img {
+.rsvp-form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
-  height: auto;
+  margin-bottom: 30px;
 }
 
-.hamburger-lines {
+.rsvp-form-group label {
+  font-family: 'Georgia', serif;
+  flex-basis: 30%; 
+  margin-right: 80px; 
+}
+
+
+.rsvp-form-group input,
+.rsvp-form-group select,
+.rsvp-form-group textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #888;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  flex-basis: 70%; 
+}
+
+.rsvp-form-group input:focus,
+.rsvp-form-group select:focus,
+.rsvp-form-group textarea:focus {
+  border: 2px solid #999;
+  outline: none;
+}
+
+.rsvp-form-group textarea {
+  resize: none;
+}
+
+.rsvp-submit-button {
+  color: #333;
+  border-radius: 10px;
+  font-size: 20px;
+  border: 2px solid #888;
+  margin: 25px auto;
+  background-color: #fff;
+  font-family: 'Dancing Script';
+  padding: 8px 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-top: 50px;
+}
+
+.rsvp-submit-button:hover {
+  color: white;
+  background-color: #999;
+}
+
+/* Customize radio buttons */
+.radio-item {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  font-family: 'Georgia', serif;
+}
+
+.radio-item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.radio-item:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.radio-item input:checked ~ .checkmark {
+  background-color: #888;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
   display: none;
 }
 
+.radio-item input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-item .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+/* Photo Page */
+.photoPage {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding-top: 150px;
+  justify-content: center;
+}
+
+.photoPage h1 {
+  font-size: 38px;
+}
+
+/* END Photo Page 
+*/
+
+@media (max-width: 745px) {
+  .rsvp-form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rsvp-form-group label {
+    margin-bottom: 5px;
+  }
+
+  .rsvp-form-group input,
+  .rsvp-form-group select,
+  .rsvp-form-group textarea {
+    width: 100%;
+  }
+
+}
+
 /* Mobile styles */
-@media (max-width: 800px) {
+@media (max-width: 845px) {
+  /* General */
+
+  h2, h3 {
+    font-size: 24px;
+  }
+
+  section {
+    margin: 0;
+    margin-bottom: 50px;
+  }
+  
+  /* END General 
+  */
+
+  /* Navigation */
   .hamburger-lines {
-    display: flex; /* Show the hamburger icon on mobile */
+    display: flex; 
     z-index: 2;
   }
 
@@ -348,101 +541,122 @@ h1, h2, h3 {
   }
 
   .nav-links {
-    flex-direction: column; /* Stack the menu items vertically on mobile */
-    position: fixed; /* Make the menu items cover the entire screen */
+    flex-direction: column; 
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #f9f9f9; /* Change the background color as needed */
-    align-items: center; /* Center the menu items */
+    background-color: #f9f9f9; 
+    align-items: center; 
     transform: translateX(-100%); 
     transition: transform .5s ease-in;
     z-index: 1;
   }
 
   .nav-links a {
-    font-size: 18px; /* Increase the font size on mobile */
-    margin-bottom: 5px; /* Add some vertical spacing between the menu items */
+    font-size: 18px; 
+    margin-bottom: 5px; 
     color: #333;
   }
 
   input[type="checkbox"]:checked ~ .nav-links {
     transform: translateX(0);
-}
+  }
 
-.center-content {
-  font-size: 18px;
-  padding: 10px; /* add padding to prevent the content from touching the screen edges */
-}
+  /* END Navigation
+  */
 
-.pin-access-form {
-  width: 80%; /* reduce the width of the form */
-  margin: 0 auto; /* center the form */
-}
+  /* Pin Page*/
+  .center-content {
+    font-size: 18px;
+    padding: 10px;
+  }
 
-.pin-input {
-  font-size: 1em; /* reduce the font size */
-  width: 100%; /* make the input field and button take up the full width of the form */
-}
+  .pin-access-form {
+    width: 80%; 
+    margin: 0 auto;
+  }
 
-.pin-button {
-  font-size: 1em;
-}
+  .pin-input {
+    font-size: 1em; 
+    width: 100%; 
+  }
 
-.details-grid {
-  grid-template-columns: 1fr;
-}
+  .pin-button {
+    font-size: 1em;
+  }
 
-.map {
-  margin: 5% 0 0 0;
+  /* END Pin Page 
+  */
 
-}
+    /* Event Details */
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
 
-.map iframe {
-  width: 100%;
-}
+  .details-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 
-.details-item:not(:last-child) {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
+  .image-banner h2 {
+    font-size: 38px;
+  }
 
-.image-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
+  .image-banner {
+    margin-top: 0;
+  }
 
-section {
-  padding: 0 30px;
-  padding-bottom: 50px;
-}
+  /* End Event Details
+  */
 
-.banner-text, .photoPage h1 {
-  font-size: 38px;
-}
+  /* Dress Code */
+  .image-container { 
+    margin-top: 10px;
+  }
 
-.image-banner {
-  margin-top: 0;
-}
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* END Dress Code 
+  */
 
-h2, h3 {
-  font-size: 24px;
-}
+  /* Location */
+  .map {
+    margin: 5% 0 0 0;
+  }
+
+  .map iframe {
+    width: 100%;
+  }
+  /* End Location
+  */
+
+  /* Photo Page */
+  .photoPage h1 {
+    font-size: 30px;
+  }
+
+  /* END Photo Page
+  */
 
 }
 
 @media (max-width: 300px) {
-  .banner-text {
+  /* Event Details */
+  .image-banner h2 {
     font-size: 24px;
-    
   }
 
-  .banner-subtext {
+  .image-banner p  {
     font-size: 14px;
   }
 
   .image-banner {
     margin-top: 0;
   }
+
+  
 }

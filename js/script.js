@@ -52,3 +52,16 @@ window.onload = function() {
     pinInput.blur(); // Add this line to remove the focus from the input field
   }
   
+  var invitedGuests = ["John Doe", "Jane Smith"]  // replace with actual guest names
+
+function validateName() {
+  var inputName = document.getElementById('nameInput').value;
+  var errorMessage = document.getElementById('errorMessage');
+
+  if (!invitedGuests.includes(inputName)) {
+    errorMessage.style.display = "block";
+  } else {
+    errorMessage.style.display = "none";
+    // perform RSVP operation
+  }
+}
