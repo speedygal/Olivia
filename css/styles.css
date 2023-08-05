@@ -14,6 +14,11 @@
   20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
+.input-error {
+  animation: shake 0.5s; 
+  animation-iteration-count: 1; 
+}
+
 /* Pin Page */
 .pin-input.error {
   animation: shake 0.5s; 
@@ -430,6 +435,15 @@ h3 {
   cursor: pointer;
 }
 
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-item {
+  margin-bottom: 20px; 
+}
+
 .checkmark {
   position: absolute;
   top: 0;
@@ -515,8 +529,9 @@ h3 {
   .rsvp-form-group textarea {
     width: 100%;
   }
-
+  
 }
+
 
 /* Mobile styles */
 @media (max-width: 845px) {

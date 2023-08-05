@@ -21,6 +21,11 @@ contactForm.addEventListener("submit", (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
 
+  if(!contactForm.checkValidity()) {
+    nameInput.classList.add('input-error')
+    return
+  }
+
   // Change the submit button text to "SENDING..."
   submitButton.innerHTML = "Submitting...";
 
@@ -72,3 +77,6 @@ messageSent.addEventListener("click", function() {
 
 
 contactForm.setAttribute("novalidate", true);
+nameInput.addEventListener('animationend', () => {
+  nameInput.classList.remove('input-error');
+});
