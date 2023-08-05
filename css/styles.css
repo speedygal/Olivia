@@ -352,8 +352,12 @@ h3 {
 .rsvp-form-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
+  max-width: 600px; 
+  width: 100%;
+  margin: 0 auto; 
   margin-top: 50px;
 }
 
@@ -371,6 +375,9 @@ h3 {
   margin-right: 80px; 
 }
 
+#rsvp-form {
+  width:100%
+}
 .rsvp-form-group input,
 .rsvp-form-group select,
 .rsvp-form-group textarea {
@@ -381,6 +388,8 @@ h3 {
   font-size: 16px;
   flex-basis: 70%; 
   background-color: white;
+  box-sizing: border-box; 
+  
 }
 
 .rsvp-form-group input:focus,
@@ -485,6 +494,10 @@ h3 {
   text-align: center;
 }
 
+.rsvp-form-group {
+  width: 100%;
+  overflow-x: hidden; /* Hide any horizontal overflow */
+}
 /* END RSVP
 */
 
@@ -521,13 +534,13 @@ h3 {
     width: 100%;
   }
 
-.radio-item:first-child {
-  padding-bottom: 20px; 
-}
+  .radio-item:first-child {
+    padding-bottom: 20px; 
+  }
 
-.radio-item:last-child {
-  padding-bottom: 0; 
-}
+  .radio-item:last-child {
+    padding-bottom: 0; 
+  }
 }
 
 @media (max-width: 845px) {
@@ -679,7 +692,6 @@ h3 {
 
   .image-banner {
     margin-top: 0;
-  }
-
-  
+  } 
 }
+
