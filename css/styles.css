@@ -339,6 +339,8 @@ h3 {
 
 /* END Location 
 */
+
+/* RSVP */
 .rsvp-banner {
   font-family: 'Dancing Script';
 }
@@ -350,15 +352,10 @@ h3 {
 .rsvp-form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
-  padding: 20px;
-  max-width: 600px; /* This is the maximum width of the form. Adjust it as needed. */
-  margin: 0 auto; /* This will center the form */
   margin-top: 50px;
 }
-
 
 .rsvp-form-group {
   display: flex;
@@ -374,16 +371,16 @@ h3 {
   margin-right: 80px; 
 }
 
-
 .rsvp-form-group input,
 .rsvp-form-group select,
 .rsvp-form-group textarea {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #888;
+  border: 1px solid #999;
   font-family: 'Georgia', serif;
   font-size: 16px;
   flex-basis: 70%; 
+  background-color: white;
 }
 
 .rsvp-form-group input:focus,
@@ -401,7 +398,7 @@ h3 {
   color: #333;
   border-radius: 10px;
   font-size: 20px;
-  border: 2px solid #888;
+  border: 2px solid #999;
   margin: 25px auto;
   background-color: #fff;
   font-family: 'Dancing Script';
@@ -417,37 +414,28 @@ h3 {
   background-color: #999;
 }
 
-/* Customize radio buttons */
-.radio-item {
-  display: block;
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
-  font-family: 'Georgia', serif;
-}
-
 .radio-item input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-.radio-group {
-  display: flex;
-  flex-direction: column;
-}
-
 .radio-item {
-  margin-bottom: 20px; 
+  display: block; 
+  position: relative;
+  padding-left: 35px; 
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .checkmark {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; 
   height: 20px;
   width: 20px;
   background-color: #eee;
@@ -481,31 +469,24 @@ h3 {
   background: white;
 }
 
-  #message-sent {
-    position: fixed; /* Fixed/sticky position */
-    top: 0; /* Place the button at the top of the page */
-    left: 0; /* Place the button at the left of the page */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    z-index: 9999; /* Make it on top */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-    display: flex; /* Enable flex */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    color: white; /* Text color */
-    display: none; /* By default don't display it */
-    text-align: center;
-  }
-
-  input[type="text"]:-webkit-autofill,
-input[type="text"]:-webkit-autofill:hover,
-input[type="text"]:-webkit-autofill:focus,
-input[type="text"]:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-    box-shadow: 0 0 0px 1000px white inset;
+#message-sent {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: 9999; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  display: none; 
+  text-align: center;
 }
 
-
+/* END RSVP
+*/
 
 /* Photo Page */
 .photoPage {
@@ -520,11 +501,10 @@ input[type="text"]:-webkit-autofill:active {
   font-size: 36px;
 }
 
-
-
 /* END Photo Page 
 */
 
+/* Mobile styles */
 @media (max-width: 745px) {
   .rsvp-form-group {
     flex-direction: column;
@@ -532,7 +512,7 @@ input[type="text"]:-webkit-autofill:active {
   }
 
   .rsvp-form-group label {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }
 
   .rsvp-form-group input,
@@ -540,11 +520,16 @@ input[type="text"]:-webkit-autofill:active {
   .rsvp-form-group textarea {
     width: 100%;
   }
-  
+
+.radio-item:first-child {
+  padding-bottom: 20px; 
 }
 
+.radio-item:last-child {
+  padding-bottom: 0; 
+}
+}
 
-/* Mobile styles */
 @media (max-width: 845px) {
   /* General */
 
