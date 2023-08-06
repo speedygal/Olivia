@@ -434,6 +434,7 @@ h3 {
   position: relative;
   padding-left: 35px; 
   margin-bottom: 25px;
+  margin-left: 81px;
   cursor: pointer;
   font-size: 16px;
   user-select: none;
@@ -510,8 +511,14 @@ h3 {
   justify-content: center;
 }
 
-.photoPage h1 {
+.photoPage p {
   font-size: 36px;
+  font-family: 'Dancing Script';
+}
+
+.photoPage p2 {
+  font-size: 26px;
+  font-family: 'Dancing Script';
 }
 
 /* END Photo Page 
@@ -541,6 +548,10 @@ h3 {
   .radio-item:last-child {
     padding-bottom: 0; 
   }
+
+  .radio-item {
+    margin-left: 0px;
+}
 }
 
 @media (max-width: 845px) {
@@ -596,6 +607,11 @@ h3 {
   input[type="checkbox"]:checked ~ .nav-links {
     transform: translateX(0);
   }
+
+  #menu-toggle:checked ~ .hamburger-lines {
+    position: fixed;
+  }
+  
 
   /* END Navigation
   */
@@ -668,8 +684,12 @@ h3 {
   */
 
   /* Photo Page */
-  .photoPage h1 {
+  .photoPage p {
     font-size: 30px;
+  }
+  
+  .photoPage p2 {
+    font-size: 22px;
   }
 
   /* END Photo Page
