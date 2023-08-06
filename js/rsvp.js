@@ -21,9 +21,26 @@ contactForm.addEventListener("submit", (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
 
-  if(!contactForm.checkValidity()) {
-    nameInput.classList.add('input-error')
-    return
+  let formIsValid = true;
+
+  // Check if name is valid
+  if (!nameInput.checkValidity()) {
+      nameInput.classList.add('input-error');
+      formIsValid = false;
+  }
+  
+  // Check if attending option is selected
+  if (!attendingInputYes.checked && !attendingInputNo.checked) {
+      const radioItems = document.querySelectorAll('.radio-item');
+      radioItems.forEach(radio => radio.classList.add('input-error-option'));
+      formIsValid = false;
+  } else {
+      const radioItems = document.querySelectorAll('.radio-item');
+      radioItems.forEach(radio => radio.classList.remove('input-error-option'));
+  }
+  
+  if (!formIsValid) {
+      return;
   }
 
   // Change the submit button text to "SENDING..."
@@ -77,6 +94,13 @@ messageSent.addEventListener("click", function() {
 
 
 contactForm.setAttribute("novalidate", true);
+
 nameInput.addEventListener('animationend', () => {
   nameInput.classList.remove('input-error');
+});
+
+document.querySelectorAll('.radio-item').forEach(item => {
+  item.addEventListener('animationend', () => {
+      item.classList.remove('input-error-option');
+  });
 });

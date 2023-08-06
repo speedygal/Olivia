@@ -49,11 +49,7 @@
   <div class="rsvp-form-container">
     <form id="rsvp-form" novalidate>
       <div class="rsvp-form-group">
-        <label for="name-input">Guest Names:</label>
-        <input type="text" id="name-input" required>
-      </div>
-      <div class="rsvp-form-group">
-        <label>Will you be attending?</label>
+        <label>Will you be attending? *</label>
         <div>
             <label for="yes" class="radio-item">
                 <input type="radio" id="yes" name="attending" value="yes">
@@ -67,6 +63,10 @@
             </label>
         </div>
     </div>
+      <div class="rsvp-form-group">
+        <label for="name-input">Guest Name/s: *</label>
+        <input type="text" id="name-input" required>
+      </div>
       <div class="rsvp-form-group">
         <label for="dietary-input">Dietry Requirements:</label>
         <textarea id="dietary-input"  placeholder="List any dietary restrictions..."  rows="3" cols="30"></textarea>

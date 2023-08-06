@@ -15,9 +15,16 @@
 }
 
 .input-error {
+  border: 1px solid red !important;
   animation: shake 0.5s; 
   animation-iteration-count: 1; 
 }
+
+.input-error-option {
+  animation: shake 0.5s; 
+  animation-iteration-count: 1; 
+}
+
 
 /* Pin Page */
 .pin-input.error {
@@ -373,11 +380,13 @@ h3 {
   font-family: 'Georgia', serif;
   flex-basis: 30%; 
   margin-right: 80px; 
+  white-space: nowrap;
 }
 
 #rsvp-form {
   width:100%
 }
+
 .rsvp-form-group input,
 .rsvp-form-group select,
 .rsvp-form-group textarea {
@@ -434,7 +443,6 @@ h3 {
   position: relative;
   padding-left: 35px; 
   margin-bottom: 25px;
-  margin-left: 81px;
   cursor: pointer;
   font-size: 16px;
   user-select: none;
@@ -479,7 +487,7 @@ h3 {
   background: white;
 }
 
-#message-sent {
+#message-sent, #message-sent-failed {
   position: fixed; 
   top: 0; 
   left: 0; 
