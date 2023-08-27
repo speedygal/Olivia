@@ -33,6 +33,10 @@
   margin-left: 45px;  
 }
 
+.countdown:last-child {
+  padding-right: 45px;
+}
+
 .input-error {
   border: 1px solid red !important;
   animation: shake 0.5s; 
@@ -230,7 +234,7 @@ h3 {
 
 /* Home Page */
 .image {
-  width: 75%;
+  width: 85%;
   padding-bottom: 50px;
 }
 
