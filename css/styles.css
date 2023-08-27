@@ -14,6 +14,25 @@
   20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family:'Dancing Script';
+  font-size: 30px;
+}
+
+.countdown p {
+  margin: 0;
+  display: inline-block; 
+  margin-left: 45px;  
+}
+
 .input-error {
   border: 1px solid red !important;
   animation: shake 0.5s; 
@@ -138,9 +157,9 @@ h3 {
 }
 
 .navbar p { /*Date */
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /*text-transform: lowercase; */
   margin: 0;
 }
 
@@ -210,14 +229,14 @@ h3 {
 
 /* Home Page */
 .image {
-  width: 100%;
+  width: 75%;
   padding-bottom: 50px;
 }
 
 /* END Home Page
 */
 
-/* Event Details */
+/* Event Details 
 .image-banner {
   background: url('../images/ring.jpg') no-repeat center center;
   background-size: 550px auto;
@@ -232,6 +251,7 @@ h3 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 50px;
 }
+*/
 
 .image-banner h2 {
   margin: 0;
@@ -272,23 +292,23 @@ h3 {
   position: relative;
 }
 
+/**
 .details-item:nth-child(-n+2) {
   border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+*/
 
-/* Vertical Lines
- .details-item:nth-child(2n-1)::after {
+.details-item:first-child::after {
   content: "";
   position: absolute;
-  height: calc(100% - 40px); /* Adjust according to padding-bottom and margin-bottom 
+  height: 100%;
   width: 1px;
-  background: #ddd; /* line color 
-  right: -10px; /* adjust according to grid-gap/2 
-  top: 20px; /* adjust according to padding-top 
+  background: #ddd; /* line color */
+  right: -10px; /* adjust depending on your spacing needs */
+  top: 0;
 }
-*/
 
 /* END Event Details 
 */ 
@@ -330,10 +350,14 @@ h3 {
 
 /* END Dress Code 
 */
+.venue {
+  width: 70%;
+}
 
 /* Location */
 .map {
   width: 100%; 
+  height: auto;
   position: relative;
   margin-top: 30px;
 }
@@ -515,7 +539,7 @@ h3 {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  padding-top: 150px;
+  padding-top: 100px;
   justify-content: center;
 }
 
@@ -647,6 +671,15 @@ h3 {
   /* END Pin Page 
   */
 
+  .countdown {
+    font-size: 18px;
+    gap: 5px;
+  }
+  
+  .countdown p {
+    margin-left: 25px;  
+  }
+
     /* Event Details */
   .details-grid {
     grid-template-columns: 1fr;
@@ -656,6 +689,10 @@ h3 {
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
     margin-bottom: 20px;
+  }
+
+  .details-item:first-child::after {
+    display: none;
   }
 
   .image-banner h2 {
