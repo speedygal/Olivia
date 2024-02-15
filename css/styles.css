@@ -564,6 +564,9 @@ h3 {
 
 /* Mobile styles */
 @media (max-width: 745px) {
+  body {
+  overflow-x: hidden;
+}
   .rsvp-form-group {
     flex-direction: column;
     align-items: flex-start;
@@ -593,6 +596,9 @@ h3 {
 }
 
 @media (max-width: 845px) {
+  body {
+  overflow-x: hidden;
+}
   /* General */
 
   h2, h3 {
