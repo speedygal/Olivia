@@ -757,6 +757,10 @@ h3 {
 }
 
 @media (max-width: 300px) {
+  body {
+  overflow-x: hidden;
+}
+  
   /* Event Details */
   .image-banner h2 {
     font-size: 24px;
