@@ -24,3 +24,5 @@ Adding Numbered Lists
 Adding Links
 Use the <a> tag to create a hyperlink (target="_blank" opens the link in a new browser tab):
 <a href="https://www.example.com" target="_blank">Visit Example</a>
+
+For images, add them to the images file, and I'll add them to the page.
