@@ -360,16 +360,38 @@ h3 {
 }
 
 /* Location */
-.map {
-  width: 100%; 
-  height: auto;
-  position: relative;
-  margin-top: 30px;
+.venue-details {
+  margin: 4% 7% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; 
+  gap: 20px; 
 }
 
+/* Styles for both the Venue Image and the Map */
+.venue-image, .map {
+  flex: 1; 
+  width: calc(50% - 10px); 
+}
+
+/* Venue Image */
+.venue-image {
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+/* Map Container */
+.map {
+  display: flex; 
+  align-items: stretch; 
+}
+
+/* Map Iframe */
 .map iframe {
-  width: 70%;
-  height: 400px;
+  flex-grow: 1; 
+  width: 100%; 
+  height: 100%; 
   border: 0;
 }
 
@@ -564,9 +586,6 @@ h3 {
 
 /* Mobile styles */
 @media (max-width: 745px) {
-  body {
-  overflow-x: hidden;
-}
   .rsvp-form-group {
     flex-direction: column;
     align-items: flex-start;
@@ -596,9 +615,6 @@ h3 {
 }
 
 @media (max-width: 845px) {
-  body {
-  overflow-x: hidden;
-}
   /* General */
 
   h2, h3 {
@@ -735,13 +751,20 @@ h3 {
   */
 
   /* Location */
-  .map {
-    margin: 5% 0 0 0;
+  .venue-details {
+    flex-direction: column; 
+  }
+
+  .venue-image, .map {
+    width: 100%; 
+    max-width: none;
   }
 
   .map iframe {
-    width: 100%;
+    width: 100%; 
+    height: 300px; 
   }
+
   /* End Location
   */
 
@@ -763,10 +786,6 @@ h3 {
 }
 
 @media (max-width: 300px) {
-  body {
-  overflow-x: hidden;
-}
-  
   /* Event Details */
   .image-banner h2 {
     font-size: 24px;
