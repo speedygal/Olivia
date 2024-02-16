@@ -1,13 +1,13 @@
 # Olivia_Wedding
 
-Add a paragraph. Use the <p> tag to create a paragraph:
-<p>This is to add words to the website.</p>
+# Add a paragraph. Use the <p> tag to create a paragraph:
+# <p>This is to add words to the website.</p>
 
-Adding a heading. Use heading tags (<h1>, <h2>, etc.) for headings:
-<h2>News Update</h2>
+# Adding a heading. Use heading tags (<h1>, <h2>, etc.) for headings:
+# <h2>News Update</h2>
 
-Emphasizing text. Use <strong> for bold text and <em> for italic text:
-<p>This is an <strong>important</strong> update. This <em>new feature</em>!</p>
+# Emphasizing text. Use <strong> for bold text and <em> for italic text:
+# <p>This is an <strong>important</strong> update. This <em>new feature</em>!</p>
 
 Adding Bulleted Lists:
 <ul>
