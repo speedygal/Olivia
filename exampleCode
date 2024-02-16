@@ -4,8 +4,8 @@ Add a paragraph. Use the <p> tag to create a paragraph:
 Adding a heading. Use heading tags (<h1>, <h2>, etc.) for headings (if it looks  funny I'll need to format the font):
 <h2>News Update</h2>
 
-#Emphasizing text. Use <strong> for bold text and <em> for italic text:
-#<p>This is an <strong>important</strong> update. This <em>new feature</em>!</p>
+Emphasizing text. Use <strong> for bold text and <em> for italic text:
+<p>This is an <strong>important</strong> update. This <em>new feature</em>!</p>
 
 Adding Bulleted Lists:
 <ul>
